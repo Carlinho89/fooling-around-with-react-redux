@@ -13,5 +13,5 @@
 * 6:18 Live reload w/ npm install -S webpack-dev-server
 * 7:10 webpack dev server --content-base src
 * 7:55 --Inline --hot (live reload)
-* 8:30 Creating a "dev" command in NPM
+* 8:30 Creating a 'dev' command in NPM
 

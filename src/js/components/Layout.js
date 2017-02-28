@@ -14,7 +14,7 @@ export default class Layout extends React.Component {
     return (
       <div>
         <Header/>
-        <div class="container text-center">
+        <div class='container text-center'>
           <UserSummary/>
           <InterestTable/>
         </div>

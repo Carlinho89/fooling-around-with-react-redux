@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import ClickCounter from './ClickCounter';
 
 export default class UserInterest extends React.Component{
@@ -14,7 +14,7 @@ export default class UserInterest extends React.Component{
     }
 
     handleClick(e) {
-      this.saySomething("state is changing: ");
+      this.saySomething('state is changing: ');
       const {count} = this.state;
       this.setState({
         count: count + 1,
@@ -29,7 +29,7 @@ export default class UserInterest extends React.Component{
     var {pictUrl}      = this.props;
 
     if (!pictUrl){
-      pictUrl = "https://pixy.org/images/placeholder.png";
+      pictUrl = 'https://pixy.org/images/placeholder.png';
     }
 
     const imageDivStyle = {
@@ -38,10 +38,10 @@ export default class UserInterest extends React.Component{
     };
     return (
       <div>
-        <div class="col-sm-4" style={imageDivStyle}>
+        <div class='col-sm-4' style={imageDivStyle}>
           <ClickCounter clickCount={count}/>
-          <a class="thumbnail" href="#">
-            <img class="img-responsive" onClick={this.handleClick.bind(this)} src={pictUrl} alt="Interest"/>
+          <a class='thumbnail' href='#'>
+            <img class='img-responsive' onClick={this.handleClick.bind(this)} src={pictUrl} alt='Interest'/>
           </a>
         </div>
       </div>

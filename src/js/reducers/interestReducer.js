@@ -1,14 +1,14 @@
 
 const initialState = {
-  interestsURLs: [],
+  interests: [],
   interestsFetched: false,
 }
 
 export default function reducer (state = initialState, action) {
   switch(action.type) {
-    case "FETCH_MOCK_INTERESTS": {
+    case 'FETCH_MOCK_INTERESTS': {
 
-      return {...state, interestsURLs: action.payload, interestsFetched: true};
+      return {...state, interests: action.payload, interestsFetched: true};
       break;
     }
   }

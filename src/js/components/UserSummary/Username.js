@@ -5,7 +5,7 @@ export default class Username extends React.Component{
       const { usrName } = this.props;
       
       return (
-          <div class="col-sm-12">
+          <div class='col-sm-12'>
             <h2>Welcome {usrName}</h2>
           </div>
       );

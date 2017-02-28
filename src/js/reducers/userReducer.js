@@ -8,7 +8,7 @@ const initialState = {
 }
 export default function reducer (state = initialState, action) {
   switch(action.type) {
-    case "FETCH_MOCK_USER": {
+    case 'FETCH_MOCK_USER': {
 
       return {...state, user: action.payload, userFetched: true};
       break;
