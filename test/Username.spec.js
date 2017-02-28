@@ -7,5 +7,6 @@ describe('<Username/>', () => {
   it('should have props defined', function () {
     const wrapper = mount(<Username/>);
     expect(wrapper.props().email).to.be.defined;
+    
   });
 });

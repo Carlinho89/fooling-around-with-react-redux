@@ -1,12 +1,28 @@
-import React from 'react';
-import { mount, shallow } from 'enzyme';
-import {expect} from 'chai';
-import {UserSummary} from '../src/js/components/UserSummary';
+import React, {Component} from 'react';
+import ReactDOM from 'react-dom';
 
-describe('<UserSummary/>', () => {
+import expect from 'expect';
+
+import ReactTestUtils from 'react-addons-test-utils';
+import {shallow, mount} from 'enzyme';
+
+//These are used to pass a mock store down through nested components
+import configureStore from 'redux-mock-store';
+import { Provider } from 'react-redux';
+
+//Component
+import UserSummaryConnected, {UserSummary} from '../src/js/components/UserSummary';
+
+
+describe('<UserSummaryConnected/>', () => {
   it('should have user with name Carlo', function (){
-    const wrapper = mount(<UserSummary/>);
-
-    expect(wrapper.props().user).to.be.defined;
+    const mockStore = configureStore([]);
+    const store = mockStore({});
+    const wrapper = shallow(
+      <Provider store={store}>
+        <UserSummaryConnected/>
+      </Provider>);
+    console.log(wrapper.text());
+    expect(wrapper.text()).toBe('<Connect(UserSummary) />');
   });
 });
