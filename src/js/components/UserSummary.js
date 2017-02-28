@@ -1,5 +1,4 @@
 import React from 'react';
-import {PropTypes} from 'react';
 
 import ProfileImage from './UserSummary/ProfileImage';
 import UserDetail from './UserSummary/UserDetail';
@@ -9,13 +8,7 @@ import { connect } from 'react-redux';
 
 import {getMockUser} from '../actions/userActions'
 
-@connect((store) => {
-  return {
-    user: store.user.user,
-    fetched: store.user.userFetched,
-  };
-})
-export default class UserSummary extends React.Component{
+export class UserSummary extends React.Component{
     loadMockUser(){
       this.props.dispatch(getMockUser());
     }
@@ -43,7 +36,7 @@ export default class UserSummary extends React.Component{
                   </div>
                   <div class='col-sm-12'>
                     <br/>
-                    <button type='button' class='btn btn-primary' onClick={this.loadMockUser.bind(this)}>LoadMockUser</button>
+                    <button type='button' class='btn btn-primary' id="test-me" onClick={this.loadMockUser.bind(this)}>LoadMockUser</button>
                   </div>
                 </div>
               </div>
@@ -51,3 +44,10 @@ export default class UserSummary extends React.Component{
       );
     }
 }
+
+export default connect((store) => {
+  return {
+    user: store.user.user,
+    fetched: store.user.userFetched,
+  };
+})(UserSummary)

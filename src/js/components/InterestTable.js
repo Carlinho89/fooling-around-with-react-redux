@@ -25,12 +25,6 @@ export default class InterestTable extends React.Component{
     });
   }
 
-  componentDidMount(){
-    console.log('interests: ');
-    console.log(this.props);
-
-  }
-
   loadMockInterests(){
     this.props.dispatch(getMockInterests());
   }

@@ -14,7 +14,7 @@ export default class UserDetail extends React.Component{
       const { name } = this.props;
       return (
         <div>
-          <Username usrName={ name }/>
+          <Username usrName={ name } email={'an@example.com'}/>
         </div>
       );
     }

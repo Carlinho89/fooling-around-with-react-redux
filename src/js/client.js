@@ -6,8 +6,13 @@ import Layout from './components/Layout'
 import store from './store'
 
 const app = document.getElementById('app')
+const render = () => {
+  return (
+    <Provider store={store}>
+      <Layout/>
+    </Provider>
+  )
+}
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Layout/>
-  </Provider>, app);
+  render(), app);
