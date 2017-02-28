@@ -6,6 +6,13 @@ module.exports = {
   context: path.join(__dirname, "src"),
   devtool: debug ? "inline-sourcemap" : null,
   entry: "./js/client.js",
+  resolve: {
+    extensions: ['', '.js', '.jsx'],
+  },
+  output: {
+    path: __dirname + "/src/",
+    filename: "client.min.js",
+  },
   module: {
     loaders: [
       {
@@ -13,15 +20,17 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
         query: {
-          presets: ['react', 'es2015', 'stage-0'],
+          presets: ['react', 'es2015', 'stage-0', 'airbnb'],
           plugins: ['react-html-attrs', 'transform-decorators-legacy', 'transform-class-properties'],
         }
       }
     ]
   },
-  output: {
-    path: __dirname + "/src/",
-    filename: "client.min.js"
+  externals: {
+    'cheerio': 'window',
+    'react/addons': true,
+    'react/lib/ExecutionEnvironment': true,
+    'react/lib/ReactContext': true
   },
   plugins: debug ? [] : [
     new webpack.optimize.DedupePlugin(),

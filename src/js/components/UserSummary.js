@@ -35,11 +35,14 @@ export default class UserSummary extends React.Component{
                   <div class='col-sm-12'>
                     <div class='btn-group'>
                       <button type='button' class='btn btn-primary'>Posts</button>
+                      {' '}
                       <button type='button' class='btn btn-primary'>Followers</button>
+                      {' '}
                       <button type='button' class='btn btn-primary'>Following</button>
                     </div>
                   </div>
                   <div class='col-sm-12'>
+                    <br/>
                     <button type='button' class='btn btn-primary' onClick={this.loadMockUser.bind(this)}>LoadMockUser</button>
                   </div>
                 </div>
