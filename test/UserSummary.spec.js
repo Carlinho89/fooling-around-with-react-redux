@@ -13,7 +13,7 @@ import { Provider } from 'react-redux';
 //Component
 import UserSummaryConnected, {UserSummary} from '../src/js/components/UserSummary';
 
-
+//Uncomplete
 describe('<UserSummaryConnected/>', () => {
   it('should have user with name Carlo', function (){
     const mockStore = configureStore([]);
@@ -22,7 +22,7 @@ describe('<UserSummaryConnected/>', () => {
       <Provider store={store}>
         <UserSummaryConnected/>
       </Provider>);
-    console.log(wrapper.text());
+    wrapper.find('#test-me').simulate('click');
     expect(wrapper.text()).toBe('<Connect(UserSummary) />');
   });
 });
