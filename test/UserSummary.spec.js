@@ -1,28 +1,61 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
-
 import expect from 'expect';
-
-import ReactTestUtils from 'react-addons-test-utils';
 import {shallow, mount} from 'enzyme';
 
 //These are used to pass a mock store down through nested components
-import configureStore from 'redux-mock-store';
+//import configureStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
-
+//To spy functions
+//import sinon from 'sinon';
 //Component
-import UserSummaryConnected, {UserSummary} from '../src/js/components/UserSummary';
+import UserSummaryConnected, { UserSummary } from '../src/js/components/UserSummary';
+//To Test Actions' Creators
+import { getMockUser } from '../src/js/actions/userActions';
+import store from '../src/js/store';
 
-//Uncomplete
-describe('<UserSummaryConnected/>', () => {
-  it('should have user with name Carlo', function (){
-    const mockStore = configureStore([]);
-    const store = mockStore({});
-    const wrapper = shallow(
+describe('<UserSummary/>', () => {
+
+  it('should dispatch a \'FETCH_MOCK_USER\' when the button with \'id=\'test-me\'\' is clicked', function (){
+    const initialState = {
+      user:{
+        id   : null,
+        name : null,
+        age  : null
+      },
+      userFetched : false
+    };
+    const nextState = {
+      user:{
+        id   : 1,
+        name : 'Carlo',
+        age  : 27
+      },
+      userFetched : true
+    };
+    const wrapper = mount(
       <Provider store={store}>
         <UserSummaryConnected/>
-      </Provider>);
-    wrapper.find('#test-me').simulate('click');
-    expect(wrapper.text()).toBe('<Connect(UserSummary) />');
+      </Provider>
+    );
+
+    expect(store.getState().user).toEqual(initialState);
+
+    wrapper.find('button #login').simulate('click');
+
+    expect(store.getState().user).toEqual(nextState);
+
+  });
+
+  it('should create an action of type:\'FETCH_MOCK_USER\'',() => {
+    const expectedAction = {
+      type: 'FETCH_MOCK_USER',
+      payload: {
+        id:1,
+        name: 'Carlo',
+        age: 27
+      }
+    }
+    const body = getMockUser();
+    expect(body).toEqual(expectedAction);
   });
 });

@@ -36,7 +36,7 @@ export class UserSummary extends React.Component{
                   </div>
                   <div class='col-sm-12'>
                     <br/>
-                    <button type='button' class='btn btn-primary' id="test-me" onClick={this.loadMockUser.bind(this)}>LoadMockUser</button>
+                    <button type='button' class='btn btn-primary' id='login' onClick={this.loadMockUser.bind(this)}>LoadMockUser</button>
                   </div>
                 </div>
               </div>
