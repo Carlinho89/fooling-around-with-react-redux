@@ -11,7 +11,7 @@ import { Provider } from 'react-redux';
 import UserSummaryConnected, { UserSummary } from '../src/js/components/UserSummary';
 //To Test Actions' Creators
 import { getMockUser } from '../src/js/actions/userActions';
-import store from '../src/js/store';
+import { store } from '../src/js/store';
 
 describe('<UserSummary/>', () => {
 
@@ -55,6 +55,7 @@ describe('<UserSummary/>', () => {
         age: 27
       }
     }
+
     const body = getMockUser();
     expect(body).toEqual(expectedAction);
   });
