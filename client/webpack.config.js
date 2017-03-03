@@ -13,7 +13,7 @@ const config = {
     'es5-shim/es5-shim',
     'es5-shim/es5-sham',
     'babel-polyfill',
-    './app/bundles/HelloWorld/startup/registration',
+    './app/bundles/InstaMock/startup/registration',
   ],
 
   output: {
@@ -43,8 +43,12 @@ const config = {
       },
       {
         test: /\.jsx?$/,
+        exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
-        exclude: /node_modules/,
+        query: {
+          presets: ['react', 'es2015', 'stage-0', 'airbnb'],
+          plugins: ['react-html-attrs', 'transform-class-properties'],
+        }
       },
     ],
   },
