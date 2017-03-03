@@ -5,8 +5,8 @@ import UserDetail from './UserSummary/UserDetail';
 import UserDescription from './UserSummary/UserDescription';
 import { connect } from 'react-redux';
 
-
-import {getMockUser} from '../actions/userActions'
+//Actions
+import { getMockUser } from '../actions/userActions';
 
 export class UserSummary extends React.Component{
     loadMockUser(){

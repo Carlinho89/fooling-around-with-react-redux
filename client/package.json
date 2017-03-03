@@ -11,19 +11,22 @@
     "build:production": "NODE_ENV=production webpack --config webpack.config.js",
     "build:development": "webpack -w --config webpack.config.js"
   },
-  "cacheDirectories": ["node_modules", "client/node_modules"],
+  "cacheDirectories": [
+    "node_modules",
+    "client/node_modules"
+  ],
   "dependencies": {
+    "es5-shim": "^4.5.9",
+    "expose-loader": "^0.7.1",
+    "imports-loader": "^0.7.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-gravatar": "^2.6.1",
+    "react-on-rails": "6.7.1",
     "react-redux": "^5.0.3",
     "redux": "^3.6.0",
     "redux-promise-middleware": "^4.2.0",
     "redux-thunk": "^2.2.0",
-    "react-on-rails": "6.7.1",
-    "es5-shim": "^4.5.9",
-    "expose-loader": "^0.7.1",
-    "imports-loader": "^0.7.0",
     "webpack": "^1.14.0"
   },
   "devDependencies": {
