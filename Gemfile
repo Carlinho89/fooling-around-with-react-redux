@@ -53,3 +53,9 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # React on rails
 gem "react_on_rails", "~> 6"
+
+gem 'mini_racer', platforms: :ruby
+
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'sass-rails', '>= 3.2'
+gem 'autoprefixer-rails'
