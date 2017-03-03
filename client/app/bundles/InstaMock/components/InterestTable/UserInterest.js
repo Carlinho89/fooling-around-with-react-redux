@@ -26,9 +26,7 @@ class UserInterest extends React.Component{
       <div>
         <div class='col-sm-4' style={imageDivStyle}>
           <ClickCounter clickCount={clicks}/>
-          <a class='thumbnail' href='#'>
-            <img class='img-responsive' onClick={this.handleClick.bind(this)} src={pictUrl} alt='Interest'/>
-          </a>
+          <img class='img-responsive' onClick={this.handleClick.bind(this)} src={pictUrl} alt='Interest'/>
         </div>
       </div>
 

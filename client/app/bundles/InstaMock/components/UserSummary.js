@@ -10,7 +10,7 @@ import { getMockUser } from '../actions/userActions';
 
 export class UserSummary extends React.Component{
     loadMockUser(){
-      this.props.dispatch(getMockUser());
+      this.props.dispatch(getMockUser(1));
     }
 
     render(){
