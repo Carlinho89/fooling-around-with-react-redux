@@ -53,6 +53,6 @@ const ConnectedInterestTable = connect((store) => {
     interests: store.interests.interests,
     fetched: store.interests.fetched,
   }
-})(UserSummary)
+})(InterestTable);
 
 export default ConnectedInterestTable;
