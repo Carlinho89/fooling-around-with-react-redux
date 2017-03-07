@@ -13,11 +13,10 @@ class InterestTable extends React.Component{
   }
   onClickCount(id){
     this.props.dispatch(interestClickInc(id));
-    this.props.dispatch(interestGlobalClickInc());
   }
   render(){
     const { interests, totalCount }  = this.props;
-    
+
     console.log('props: ');
     console.log(this.props);
     if (interests.length === 0) {

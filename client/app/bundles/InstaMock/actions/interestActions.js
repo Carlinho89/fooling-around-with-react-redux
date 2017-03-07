@@ -38,9 +38,3 @@ export function interestClickInc(interestID){
     }
   }
 }
-
-export function interestGlobalClickInc(interestID){
-  return {
-    type:'GLOBAL_INTER_INC'
-  }
-}
