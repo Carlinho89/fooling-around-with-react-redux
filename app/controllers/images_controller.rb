@@ -21,6 +21,11 @@ class ImagesController < ApplicationController
   def edit
   end
 
+  # GET /users/1/images
+  def show_user_image
+    @images = User.find(params[:user_id]).image
+  end
+
   # POST /images
   # POST /images.json
   def create
@@ -69,6 +74,6 @@ class ImagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def image_params
-      params.require(:image).permit(:user, :url)
+      params.require(:image).permit(:url, :user_id)
     end
 end

@@ -2,12 +2,12 @@
 
 one:
   name: MyString
+  admin: false
   email: MyString
   age: 1
-  admin: 
 
 two:
   name: MyString
+  admin: false
   email: MyString
   age: 1
-  admin: 

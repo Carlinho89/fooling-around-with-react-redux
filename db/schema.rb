@@ -10,38 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170303125251) do
-
-  create_table "galleries", force: :cascade do |t|
-    t.string   "title"
-    t.integer  "image_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["image_id"], name: "index_galleries_on_image_id"
-  end
+ActiveRecord::Schema.define(version: 20170307101906) do
 
   create_table "images", force: :cascade do |t|
-    t.integer  "user_id"
     t.string   "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_images_on_user_id"
-  end
-
-  create_table "likes", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["image_id"], name: "index_likes_on_image_id"
-    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
+    t.boolean  "admin"
     t.string   "email"
     t.integer  "age"
-    t.boolean  "admin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
